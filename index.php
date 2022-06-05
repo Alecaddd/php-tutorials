@@ -1,30 +1,12 @@
-<?php
-$title = "This is my home page";
-$description = "This is my description";
-$x = 1;
-?>
+<?php require_once "variables.php"; ?>
 <html>
     <head>
-        <title>PHP Tutorials</title>
+        <title><?php echo $title; ?></title>
     </head>
     <body>
-        <h1>
-            <?php
-            echo $title, " and", " something", " else";
-            ?>
-        </h1>
-        <h2>
-            <?php print $description; ?>
-        </h2>
-        <p>
-            <?php
-            // if ($x == 1) {
-            //     echo "YES";
-            // } else {
-            //     echo "NO";
-            // }
-            ($x == 1) ? print "YES" : print "NO";
-            ?>
-        </p>
+        <h1><?php echo $title; ?></h1>
+        <h2><?php echo $description; ?></h2>
+        <p><?php echo $p; ?></p>
+        <footer>PHP for Beginners Footer</footer>
     </body>
 </html>
