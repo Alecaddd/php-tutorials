@@ -1,12 +1,23 @@
-<?php require_once "variables.php"; ?>
-<html>
-    <head>
-        <title><?php echo $title; ?></title>
-    </head>
-    <body>
-        <h1><?php echo $title; ?></h1>
-        <h2><?php echo $description; ?></h2>
-        <p><?php echo $p; ?></p>
-        <footer>PHP for Beginners Footer</footer>
-    </body>
-</html>
+<?php
+
+$request = $_SERVER["REQUEST_URI"];
+
+switch ($request) {
+    case "/":
+    case "":
+        require "home.php";
+        break;
+
+    case "/about":
+        require "about.php";
+        break;
+
+    case "/contact":
+        require "contact.php";
+        break;
+
+    default:
+        http_response_code(404);
+        require "404.php";
+        break;
+}
